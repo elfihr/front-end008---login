@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --cor-clara:#f8fafc;
+
+    --cor-cinza-claro: #797984;
+    --cor-cinza-escuro: #312d37;
+    --cor-preto: #000;
+
+    --cor-fundo-claro: #a679f4;
+    --cor-fundo-medio: #5e2cb4;
+    --cor-fundo-escuro: #2d0376;
+
+    --cor-container: linear-gradient(200deg,var(--cor-fundo-claro),var(--cor-fundo-medio),var(--cor-fundo-escuro));
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+#container{
+    height: 100VH;
+    width: 100%;
+    background: var(--cor-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem{
+    width: 35px;
+}
+
+.imagem:hover{
+    transform: scale(1.2);
+}
+
+#formulario{
+    background-color: var(--cor-clara);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap:30px;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.36);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+
+}
+
+
+
+.input-field input{
+    border:none;
+    background-color: transparent;
+}
+
+#formulario-header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#formulario-header h1{
+    font-size: 40px;
+    position: relative;
+}
+
+#formulario-header h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--cor-fundo-medio);
+    height: 4px;
+    bottom: 10px;
+}
+
+#mode-icon{
+    cursor: pointer;
+}
+
+#social-media{
+    display: flex;
+    justify-content: space-between;
+}
+
+#login-button{
+    border:none;
+    background: var(--cor-container);
+    padding: 7px;
+    color: var(--cor-clara);
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#login-button:hover{
+    transform: scale(1.05);
+}
+
+.dark#formulario{
+    color: var(--cor-clara);
+    background-color: var(--cor-cinza-escuro);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#formulario .input-field input, 
+.dark#formulario .input-field i{
+    color: var(--cor-clara);
+}
+    
+@keyframes dark-to-light {
+    0% {
+        background-color: var(--cor-cinza-escuro);
+    }
+    
+    100% {
+        background-color: var(--cor-clara);
+    }
+}
+
+@keyframes light-to-dark {
+    100% {
+        background-color: var(--cor-clara);
+    }
+    
+    0% {
+        background-color: var(--cor-cinza-escuro);
+    }
+}
